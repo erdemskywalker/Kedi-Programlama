@@ -72,7 +72,3 @@ Yazarken büyüyen, paylaştıkça gelişen bir proje.
 Yıldızla ⭐ | Issue aç 🔧 | PR gönder 💻 | Yorum yaz 💬
 Bu proje, genç bir geliştiricinin kendi dilini yaratma hayaliyle başladı.
 Senin desteğinle büyümeye devam edecek.
-
-perl
-Copy
-Edit
