@@ -51,6 +51,7 @@ değişken yazı İsim[10]
 yaz "Adınız:"
 girdi (İsim, boyut(İsim))
 çağır SelamVer(İsim)
+```
 ⚙️ Nasıl Çalıştırılır?
 bash
 Copy
