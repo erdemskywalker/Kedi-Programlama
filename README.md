@@ -1,4 +1,4 @@
-<h1 align="center">🦁 Kedi.py - Türkçe Betik Tabanlı Derleyici</h1>
+<h1 align="center">🦁 Kedi Programming Language - Türkçe Betik Tabanlı Derleyici</h1>
 
 <p align="center">
   Türkçe dilinde yazılmış özel bir betik dili ⌨️<br>
