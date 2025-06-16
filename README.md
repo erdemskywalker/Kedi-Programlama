@@ -23,29 +23,7 @@ Amacım: Türk gençleri için yazılımı daha anlaşılır ve erişilebilir k�
 
 ## 🔧 Neler Destekleniyor?
 
-<html>
-  <head>
-    <style>
-          table {
-      width: 100%;
-      margin-top: 30px;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid #444;
-      padding: 10px;
-    }
-    th {
-      background-color: #222;
-      color: #00ffcc;
-    }
-    td {
-      background-color: #1a1a1a;
-    }
-    </style>
-  </head>
-  <body>
-      <table>
+<table style="width: 100%;">
     <thead>
       <tr>
         <th>Komut / Yapı</th>
@@ -67,8 +45,6 @@ Amacım: Türk gençleri için yazılımı daha anlaşılır ve erişilebilir k�
       <tr><td>.</td><td>Blok bitirici</td><td>.</td></tr>
     </tbody>
   </table>
-  </body>
-</html>
 
 ---
 
