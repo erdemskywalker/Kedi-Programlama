@@ -1,22 +1,3 @@
-<style>
-      table {
-      width: 100%;
-      margin-top: 30px;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid #444;
-      padding: 10px;
-    }
-    th {
-      background-color: #222;
-      color: #00ffcc;
-    }
-    td {
-      background-color: #1a1a1a;
-    }
-</style>
-
 <h1 align="center">🦁 Kedi Programming Language - Türkçe Betik Tabanlı Derleyici</h1>
 
 <p align="center">
