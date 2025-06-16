@@ -19,7 +19,7 @@
 Kodlar Türkçe yazılır, otomatik olarak C diline çevrilir ve çalıştırılır.  
 Amacım: Türk gençleri için yazılımı daha anlaşılır ve erişilebilir kılmak.  
 
-<p style="color:purple;">Online Web Editor:</p> http://176.96.131.83:5000/
+🟣 Online Web Editor: http://176.96.131.83:5000/
 
 ---
 
