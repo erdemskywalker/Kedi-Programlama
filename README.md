@@ -1,3 +1,22 @@
+<style>
+      table {
+      width: 100%;
+      margin-top: 30px;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 10px;
+    }
+    th {
+      background-color: #222;
+      color: #00ffcc;
+    }
+    td {
+      background-color: #1a1a1a;
+    }
+</style>
+
 <h1 align="center">🦁 Kedi Programming Language - Türkçe Betik Tabanlı Derleyici</h1>
 
 <p align="center">
@@ -23,15 +42,28 @@ Amacım: Türk gençleri için yazılımı daha anlaşılır ve erişilebilir k�
 
 ## 🔧 Neler Destekleniyor?
 
-✅ `işlev` tanımı (fonksiyonlar)  
-✅ `değişken` tanımı (sayı, yazı, ondalık)  
-✅ `eğer / değilse` koşulları  
-✅ `sürekli` döngüsü  
-✅ `çağır` ile fonksiyon çağrısı  
-✅ `yaz` komutu ile ekrana çıktı  
-✅ `girdi` ile kullanıcıdan veri alma  
-✅ `boyut()` ile C `sizeof()` karşılığı  
-✅ Tüm komutlar Türkçe kelimelerle
+  <table>
+    <thead>
+      <tr>
+        <th>Komut / Yapı</th>
+        <th>Açıklama</th>
+        <th>Örnek Kod</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>yaz</td><td>Ekrana çıktı verir</td><td>yaz "Merhaba"</td></tr>
+      <tr><td>değişken</td><td>Değişken tanımlar</td><td>değişken yazı Ad = "Erdem"</td></tr>
+      <tr><td>işlev</td><td>Fonksiyon tanımlar</td><td>işlev SelamVer(yazı Ad)</td></tr>
+      <tr><td>çağır</td><td>Fonksiyon çağırır</td><td>çağır SelamVer("Erdem")</td></tr>
+      <tr><td>eğer</td><td>Koşullu ifade</td><td>eğer yazikarsilastir(Ad,"Erdem")</td></tr>
+      <tr><td>değilse</td><td>Alternatif durum</td><td>değilse</td></tr>
+      <tr><td>sürekli</td><td>Döngü başlatır</td><td>sürekli i < 10</td></tr>
+      <tr><td>girdi <span style="color:pink;">(WEB'TE KULLANILMAZ)</span></td><td>Kullanıcıdan veri alır</td><td>girdi(İsim, boyut(İsim))</td></tr>
+      <tr><td>boyut()</td><td>sizeof karşılığı</td><td>boyut(İsim)</td></tr>
+      <tr><td>alt</td><td>Yeni satır</td><td>alt</td></tr>
+      <tr><td>.</td><td>Blok bitirici</td><td>.</td></tr>
+    </tbody>
+  </table>
 
 ---
 
