@@ -19,7 +19,7 @@
 Kodlar Türkçe yazılır, otomatik olarak C diline çevrilir ve çalıştırılır.  
 Amacım: Türk gençleri için yazılımı daha anlaşılır ve erişilebilir kılmak.  
 
-🟣 Online Web Editor: https://kedierdemskywalker.site
+🟣 Online Web Editor: https://kedi.erdemskywalker.site
 
 ---
 
