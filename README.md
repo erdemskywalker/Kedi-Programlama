@@ -57,8 +57,7 @@ yaz "Merhaba"
 satır
 ```
 
-⚙️ Nasıl Çalıştırılır? <br>
-LİNUX:
+⚙️ Linux'a İndirme
 ```
 nano indir.sh
 ```
@@ -110,6 +109,11 @@ echo "ℹ️  Artık terminalden 'kedi' komutunu kullanabilirsin."
 chmod +x indir.sh
 sudo indir.sh
 ```
+
+⚙️ Windowsa İndirme
+
+
+
 👨‍💻 Geliştirici
 Yapımcı: Erdem Skywalker
 Amaç: Eğitim, yazılım sevgisi ve özgünlük.
