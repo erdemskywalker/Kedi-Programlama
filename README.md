@@ -111,7 +111,106 @@ sudo indir.sh
 ```
 
 ⚙️ Windowsa İndirme
+```
+GCC Kurulumunu Yap
+```
+```
+indir.bat
+```
+```
+@echo off
+setlocal EnableDelayedExpansion
 
+:: Yönetici kontrolü (basit)
+net session >nul 2>&1
+if ERRORLEVEL 1 (
+    echo Bu scripti YONETICI olarak calistiriniz.
+    pause
+    exit /b
+)
+
+echo Kedi Programlama kuruluyor...
+
+:: Python kontrolü
+where python >nul 2>nul
+if ERRORLEVEL 1 (
+    echo Python bulunamadi. Lutfen once Python yukleyin.
+    pause
+    exit /b
+)
+
+:: Powershell kontrolü
+where powershell >nul 2>nul
+if ERRORLEVEL 1 (
+    echo Powershell bulunamadi. Bu script icin Powershell gereklidir.
+    pause
+    exit /b
+)
+
+echo Kedi Programlama indiriliyor...
+powershell -Command "Invoke-WebRequest -Uri https://github.com/erdemskywalker/Kedi-Programlama/archive/refs/heads/main.zip -OutFile Kedi.zip"
+if ERRORLEVEL 1 (
+    echo Zip indirme basarisiz oldu.
+    pause
+    exit /b
+)
+
+echo Zip dosyasi aciliyor...
+powershell -Command "Expand-Archive -Path Kedi.zip -DestinationPath ."
+if ERRORLEVEL 1 (
+    echo Zip acma basarisiz oldu.
+    pause
+    exit /b
+)
+
+set "KEDI_DIR=%ProgramFiles%\Kedi-Programlama"
+if not exist "%KEDI_DIR%" (
+    mkdir "%KEDI_DIR%"
+)
+
+echo Dosyalar kopyalaniyor...
+xcopy /E /Y "Kedi-Programlama-main\*" "%KEDI_DIR%\"
+if ERRORLEVEL 1 (
+    echo Dosya kopyalama basarisiz oldu.
+    pause
+    exit /b
+)
+
+del Kedi.zip >nul 2>nul
+rmdir /S /Q Kedi-Programlama-main >nul 2>nul
+
+echo PATH kontrol ediliyor...
+
+:: Sistem PATH güncellemesi için
+setlocal enabledelayedexpansion
+echo %PATH% | find /I "%KEDI_DIR%" >nul
+if ERRORLEVEL 1 (
+    echo PATH'e "%KEDI_DIR%" ekleniyor...
+    setx /M PATH "%PATH%;%KEDI_DIR%"
+    echo PATH guncellendi. Lütfen oturumu kapatıp açın.
+) else (
+    echo PATH zaten %KEDI_DIR% iceriyor.
+)
+endlocal
+
+@echo off
+set KEDI_DIR=C:\Program Files\Kedi-Programlama
+
+python "%KEDI_DIR%\kedi.py" %1
+
+
+
+
+
+echo.
+echo Kedi Programlama basariyla kuruldu.
+echo PATH degisikligi yapildi. PATH'in aktif olmasi icin oturumu kapatip yeniden giris yapmaniz gerekebilir.
+echo Artik terminalde "kedi dosya.kedi" seklinde kullanabilirsiniz.
+echo.
+echo GCC veya uyumlu bir C derleyici sisteminizde yuklu olmalidir. Windows icin MinGW veya MSYS2 onerilir.
+pause
+
+```
 
 
 👨‍💻 Geliştirici
