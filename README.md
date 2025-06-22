@@ -53,22 +53,11 @@ Amacım: Türk gençleri için yazılımı daha anlaşılır ve erişilebilir k�
 ## ✨ Örnek Kod
 
 ```laneb
-işlev SelamVer(yazı Ad)
-    eğer Ad=="Erdem"
-        yaz "Hoşgeldin %s\n",Ad
-    .
-    değilse
-        yaz "Tanınmayan Kişi %s\n",Ad
-    .
-.
-
-değişken yazı İsim[10]
-yaz "Adınız:"
-girdi (İsim, boyut(İsim))
-çağır SelamVer(İsim)
+yaz "Merhaba"
+satır
 ```
 
-⚙️ Nasıl Çalıştırılır?
+⚙️ Nasıl Çalıştırılır? <br>
 LİNUX:
 ```
 nano indir.sh
