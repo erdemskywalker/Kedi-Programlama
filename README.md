@@ -69,7 +69,9 @@ girdi (İsim, boyut(İsim))
 ```
 
 ⚙️ Nasıl Çalıştırılır?
-nano indir.sh =>
+```
+nano indir.sh
+```
 ```
 #!/bin/bash
 
