@@ -41,7 +41,7 @@ void kedi_default_assignment_typedef_string(kedi_default_typedef_string *d, cons
 }
 
 
-int yazı_karşılaştır(const char *str1, const char *str2) {
+int yazi_karsilastir(const char *str1, const char *str2) {
     while (*str1 && *str2) {
         if (*str1 != *str2) {
             return 0;  
@@ -51,5 +51,5 @@ int yazı_karşılaştır(const char *str1, const char *str2) {
     } 
     return (*str1 == '\\0' && *str2 == '\\0');
 }
-
+#define yazı_karşılaştır yazi_karsilastir
 """
