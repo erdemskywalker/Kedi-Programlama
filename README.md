@@ -1,4 +1,4 @@
-<h1 align="center">🦁 Kedi Programming Language - Türkçe Betik Tabanlı Derleyici</h1>
+<h1 align="center">🦁 Kedi Programlama Dili - Türkçe Betik Tabanlı Derleyici</h1>
 
 <p align="center">
   Türkçe dilinde yazılmış özel bir betik dili ⌨️<br>
@@ -13,9 +13,9 @@
 
 ---
 
-## 🎯 Neden kedi.py?
+## 🎯 Neden Kedi?
 
-🐾 Kedi.py, Türkçe'ye özel olarak geliştirilmiş bir programlama dili derleyicisidir.  
+🐾 Kedi, Türkçe'ye özel olarak geliştirilmiş bir programlama dili derleyicisidir.  
 Kodlar Türkçe yazılır, otomatik olarak C diline çevrilir ve çalıştırılır.  
 Amacım: Türk gençleri için yazılımı daha anlaşılır ve erişilebilir kılmak.  
 
