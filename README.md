@@ -69,6 +69,7 @@ girdi (İsim, boyut(İsim))
 ```
 
 ⚙️ Nasıl Çalıştırılır?
+LİNUX:
 ```
 nano indir.sh
 ```
@@ -77,7 +78,6 @@ nano indir.sh
 
 echo "➡️ Kedi Programlama kuruluyor..."
 
-# GCC kontrolü
 if ! command -v gcc &> /dev/null; then
     echo "ℹ️  gcc yüklü değil, şimdi yüklenecek..."
 
@@ -91,26 +91,26 @@ if ! command -v gcc &> /dev/null; then
     fi
 fi
 
-# Reponun klonlanması
+
 git clone https://github.com/erdemskywalker/Kedi-Programlama || {
     echo "❌ Git klonlama başarısız!"
     exit 1
 }
 
-# Sistem dizinlerine kopyalama
+
 sudo mkdir -p /lib/Kedi-Programlama
 sudo cp -r Kedi-Programlama/linux/* /lib/Kedi-Programlama/
 
-# Bash wrapper oluşturulması
+
 sudo tee /usr/bin/kedi > /dev/null <<'EOF'
 #!/bin/bash
 python3 /lib/Kedi-Programlama/kedi.py "$1"
 EOF
 
-# Çalıştırılabilir hale getirme
+
 sudo chmod +x /usr/bin/kedi
 
-# Temizlik
+
 rm -rf ./Kedi-Programlama
 
 echo "✅ BAŞARIYLA YÜKLENDİ | KEDİ PROGRAMLAMA"
