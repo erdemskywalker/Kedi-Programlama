@@ -1,5 +1,5 @@
 işlev SelamVer(yazı Ad)
-    eğer yazikarsilastir(Ad,"Erdem")
+    eğer yazı_karşılaştır(Ad,"Erdem Turan")
         yaz "Hoşgeldin %s",Ad
         alt
     .
@@ -9,12 +9,8 @@ işlev SelamVer(yazı Ad)
     .
 .
 
-değişken yazı İsim[10]
+yazı İsim="Erdem Turan";
 
-yaz "Adınız:"
+satır
 
-çağır girdi(İsim, boyut(İsim))
-
-alt
-
-çağır SelamVer(İsim)
+SelamVer(İsim)
