@@ -2,13 +2,9 @@ global_code_one="""
 
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 #include <stdbool.h>
-
-
-
-
-
+#include <stdlib.h>
+#include <windows.h>
 
 
 typedef struct 
@@ -40,8 +36,25 @@ void kedi_default_assignment_typedef_string(kedi_default_typedef_string *d, cons
     d->boyut=len;
 }
 
+char* girdi(){
+    char y[200];
+    fgets(y, sizeof(y), stdin);
+    y[strcspn(y, "\\n")] = '\\0';
 
-int yazi_karsilastir(const char *str1, const char *str2) {
+    char* x = malloc(strlen(y) + 1); 
+    if (x != NULL)
+        strcpy(x, y);
+    return x;
+}
+
+int yazıdan_sayıya(const char *x)
+{
+    return atof(x);
+}
+
+
+
+int yazı_karşılaştır(const char *str1, const char *str2) {
     while (*str1 && *str2) {
         if (*str1 != *str2) {
             return 0;  
@@ -51,5 +64,8 @@ int yazi_karsilastir(const char *str1, const char *str2) {
     } 
     return (*str1 == '\\0' && *str2 == '\\0');
 }
-#define yazı_karşılaştır yazi_karsilastir
+
+
+
+
 """

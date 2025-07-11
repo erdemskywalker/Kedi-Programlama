@@ -1,46 +1,88 @@
 from parser.register import register_command
-import re
-
+import os
+import platform
+import compiler.state as state
 
 @register_command("yazı")
 def ast_declaration_string(tokens):    
-    if len(tokens)>2:
-        get=" ".join(tokens[1:])
-    else:
-        get=tokens[1]
-    get=get.split("=")
-    if len(get)>1:
-        value=get[1]
-    else:
-        value='""'
-    return {
+    try:
+        if len(tokens)>2:
+            get="".join(tokens[1:])
+        else:
+            get=tokens[1]
+        get=get.split("=")
+        
+        if len(get)>1:
+            value=get[1]
+        elif len(get)>2:
+            value=get[1:]
+        else:
+            value='""'
+        return {
             "type":"declaration_string",
             "name":get[0],
             "value": value
-    }
+        }
+    except Exception as e:
+        return{
+            "type":"error",
+            "code":"yazı",
+            "event":"değişken oluşturulurken hata meydana geldi;"
+        }
+    
+
+@register_command("değiştir")
+def ast_assignment_declaration(tokens):
+    try:
+        if len(tokens)>3:
+            value="".join(tokens[2:])
+        else:
+            value=tokens[2]
+        
+        return{
+                "type":"assignment_declaration",
+                "name":tokens[0],
+                "value":value
+            }
+    except:
+        return{
+            "type":"error",
+            "code":"değişken veri ataması",
+            "event":"değişken veri atamasında hata meydana geldi;"
+        }
+
+
 
 @register_command("sayı")
-def ast_declaration_int(tokens):    
-    if len(tokens)>2:
-        get=" ".join(tokens[1:])
-    else:
-        get=tokens[1]
-    get=get.split("=")
-    if len(get)>1:
-        value=get[1]
-    else:
-        value=""
+def ast_declaration_int(tokens):
+    try:
+        if len(tokens)>2:
+            get="".join(tokens[1:])
+        else:
+            get=tokens[1]
+        get=get.split("=")
+        if len(get)>1:
+            value=get[1]
+        else:
+            value=""
     
-    return {
+        return {
             "type":"declaration_int",
             "name":get[0],
             "value": value
-    }
+        }
+    except:
+       return{
+            "type":"error",
+            "code":"sayı",
+            "event":"değişken oluşturulurken hata meydana geldi;"
+        }    
+
 
 @register_command("ondalık")
 def ast_declaration_float(tokens):    
     if len(tokens)>2:
-        get=" ".join(tokens[1:])
+        get="".join(tokens[1:])
     else:
         get=tokens[1]
     get=get.split("=")
@@ -111,21 +153,39 @@ def ast_n(tokens):
             "func":"\\n"
         }
 
-@register_command("değiştir")
-def ast_assignment_declaration(tokens):
-    try:
-        value=(" ".join(tokens[0:])).split("=")[1]
-        if value.startswith("'") or value.startswith('"'):
-            return {
-                "type":"assignment_declaration_string",
-                "name": (" ".join(tokens[0:])).split("=")[0],
-                "value": value
-            }
-        else:
-            return {
-                "type":"assignment_declaration_number",
-                "name":(" ".join(tokens[0:])).split("=")[0],
-                "value": (" ".join(tokens[0:])).split("=")[1]
-            }
-    except:
-        return None
+
+@register_command("dosya_işlemi")
+def ast_FILE(tokens):
+    return {
+            "type":"FILE",
+            "name":tokens[1]
+        }
+
+@register_command("dosya_kapa")
+def ast_FILE_CLOSE(tokens):
+    return {
+            "type":"FILE_CLOSE",
+            "name":tokens[1]
+        }
+
+
+
+@register_command("dönüt")
+def ast_return(tokens):
+    return {
+            "type":"return",
+            "value":" ".join(tokens[1:])
+        }
+
+
+def ast_include(tokens):
+    if platform.system() == "Windows":
+        x=os.getcwd()+"\\"+"\\".join(tokens[1].split("."))
+    else:
+        x=os.getcwd()+"/"+"/".join(tokens[1].split("."))
+    x=x+".kedi"
+    return{
+        "type":"include",
+        "file_path":x,
+        "file_name":tokens[1]
+    }

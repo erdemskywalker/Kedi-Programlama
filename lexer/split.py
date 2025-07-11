@@ -12,5 +12,6 @@ def split_line(line):
                 if len(parts) == 2:
                     param_list.append([parts[0], parts[1]])
             return ["işlev", func_name] + param_list
-    tokens = re.findall(r'"[^"]*"|\S+', line)
+    tokens = re.findall(r'"[^"]*"|\w+\(\)|[&()\[\]{}=+*/-]|[^\s&()\[\]{}=+*/-]+', line)
     return tokens
+    
